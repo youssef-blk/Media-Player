@@ -1,0 +1,356 @@
+:root {
+  --green-color: #1db954;
+  --black-color: #191919;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-menu {
+  width: calc(20% - 20px);
+  height: 80%;
+  margin: 15px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ffffff49;
+  margin-bottom: 0;
+  background-color: var(--black-color);
+  border-radius: 10px;
+  z-index: 4;
+}
+
+.side-menu h1 {
+  text-align: center;
+  padding-block: 10px;
+  font-size: 40px;
+  color: var(--green-color);
+  border-bottom: 1px solid var(--green-color);
+}
+.side-menu .playlist {
+  height: 530px;
+  padding-block: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.side-menu .playlist::-webkit-scrollbar {
+  background-color: #232323;
+  width: 10px;
+}
+
+.side-menu .playlist::-webkit-scrollbar-thumb {
+  background-color: var(--green-color);
+}
+.side-menu .playlist span {
+  width: 100%;
+  height: 70px;
+  padding: 10px 5px;
+  background-color: #131313;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.side-menu .playlist span:hover {
+  background-color: #2b2b2b;
+}
+
+.side-menu .playlist .selected {
+  background-color: #2b2b2b;
+  margin-block: 5px;
+}
+.side-menu .playlist span img {
+  width: calc(20% - 5px);
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.side-menu .playlist span div {
+  width: calc(80% - 5px);
+  height: 100%;
+  margin-left: 10px;
+  line-height: 1.8;
+}
+
+.side-menu .playlist span button {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 70px;
+  font-size: 20px;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(242, 69, 69, 0.504);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  transform: translateX(100%);
+}
+
+.side-menu .playlist span:hover button {
+  transform: translateX(0);
+}
+.side-menu input {
+  display: none;
+}
+
+.side-menu #addBtn {
+  margin: 10px;
+  height: 100px;
+  background-color: var(--green-color);
+  font-size: 26px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.main-screen {
+  width: calc(80% - 20px);
+  height: 80%;
+  border: 1px solid #ffffff49;
+  margin: 15px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.main-screen .background-blur {
+  background-image: url(../imgs/default.jpg);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+}
+.main-screen img {
+  width: 500px;
+  z-index: 3;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.time-line {
+  width: 100%;
+  border: 1px solid #ffffff49;
+  margin: 15px;
+  height: calc(20% - 33px);
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  background-color: var(--black-color);
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.time-line .song-info {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  gap: 30px;
+}
+
+.time-line .song-info img {
+  max-width: 70px;
+  border-radius: 50%;
+}
+
+.time-line .song-info .info h3 {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.time-line .song-info .info p {
+  font-size: 20px;
+  color: #ffffffa8;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.control-panel .progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.control-panel .progress-bar input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 450px;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #444 0%, #444 50%, #444 50%, #444 100%);
+}
+
+.control-panel .progress-bar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background: var(--green-color);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.control-panel .progress-bar span {
+  font-size: 20px;
+}
+
+.control-panel .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-block: 10px;
+}
+
+.control-panel .controls button {
+  border: none;
+  padding: 13px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 23px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.control-panel .controls button:active {
+  transform: scale(0.9);
+}
+
+.control-panel .controls button.hide {
+  display: none;
+}
+
+.control-panel .controls button:hover {
+  background-color: var(--green-color);
+}
+
+.rotate {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.time-line .volume {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time-line .volume button {
+  height: 50px;
+  width: 50px;
+  font-size: 26px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s;
+  position: relative;
+}
+
+.time-line .volume button:active {
+  transform: scale(0.9);
+}
+
+.time-line .volume #shuffle::after,
+.time-line .volume #repeat::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 70%;
+  background-color: var(--green-color);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.2s;
+}
+.time-line .volume #shuffle.active::after,
+.time-line .volume #repeat.active::after {
+  width: 0;
+}
+
+@media (max-width: 1000px) {
+  .side-menu {
+    width: calc(30% - 20px);
+    height: calc(100vh - 260px);
+  }
+  .main-screen {
+    width: calc(70% - 20px);
+    height: calc(100vh - 260px);
+  }
+  .main-screen img {
+    width: 300px;
+  }
+
+  .time-line {
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+
+  .control-panel {
+    position: relative;
+    bottom: 0;
+    transform: translate(0, 0);
+    left: unset;
+    margin: 10px auto;
+    margin-top: 30px;
+  }
+
+  .time-line .volume {
+    width: 200px;
+  }
+}

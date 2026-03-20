@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TP2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-menu">
+        <h1>Playlist</h1>
+        <div class="playlist" id="playlist"></div>
+        <input type="file" name="file" id="file" accept="audio/*" />
+        <button id="addBtn">Upload Music</button>
+      </div>
+
+      <div class="main-screen">
+        <div class="background-blur" id="background-blur"></div>
+        <img src="imgs/default.jpg" alt="" id="album-img" />
+      </div>
+
+      <div class="time-line">
+        <audio src=""></audio>
+
+        <div class="song-info">
+          <img src="imgs/default.jpg" alt="" id="songLogo" />
+          <div class="info">
+            <h3 class="song-name" id="song-name"></h3>
+            <p class="artist" id="artist"></p>
+          </div>
+        </div>
+
+        <div class="volume">
+          <button class="volume-down" id="volume-down">
+            <i class="fa-solid fa-volume-low"></i>
+          </button>
+          <button class="volume-up" id="volume-up">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+          <button id="repeat">
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+          <button id="shuffle">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+        </div>
+
+        <div class="control-panel">
+          <div class="progress-bar">
+            <span class="time" id="time">0:00</span>
+            <input
+              type="range"
+              name="range"
+              id="musicTime"
+              min="0"
+              max="100"
+              value="0"
+            />
+            <span class="duration" id="duration">0:00</span>
+          </div>
+          <div class="controls">
+            <button class="previous" id="previous">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button class="backwards" id="backwards">
+              <i class="fa-solid fa-backward"></i>
+            </button>
+            <button id="pause" class="hide">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+            <button id="play"><i class="fa-solid fa-play"></i></button>
+            <button class="forwards" id="forwards">
+              <i class="fa-solid fa-forward"></i>
+            </button>
+            <button class="next" id="next">
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jsmediatags.min.js"></script>
+  </body>
+</html>
