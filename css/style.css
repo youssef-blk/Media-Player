@@ -118,12 +118,12 @@ body {
 
 .side-menu #addBtn {
   margin: 10px;
-  height: 100px;
   background-color: var(--green-color);
   font-size: 26px;
   color: #fff;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 100px;
+  padding-block: 15px;
   cursor: pointer;
 }
 
